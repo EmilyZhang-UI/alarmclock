@@ -24,7 +24,7 @@ positions.forEach(function(item, index){
     var dotsDiv = document.createElement("div");
 
     //add style to dots
-    dotsDiv.className = "dots blink";
+    dotsDiv.className = "dots";
 
     //add dots to the clock digits part
     digitHolder.appendChild(dotsDiv);
