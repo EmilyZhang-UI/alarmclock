@@ -262,6 +262,9 @@ body{
   right:10px;
   top:5px;
 }
+#closeButton:hover{
+  cursor: pointer;
+}
 #addAlarmForm{
   display: none;
   position: relative;
