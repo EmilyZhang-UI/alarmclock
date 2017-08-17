@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <!-- this is the clock -->
+    <div id="clock" class="light dark">
+  			<div class="display">
+  				<div class="ampm"></div>
+  				<div class="alarm"></div>
+  				<div class="digits"></div>
+          <div class="weekdays"></div>
+  			</div>
+    </div>
+    <!-- this is set alarm button,if click it, the alarm window will show -->
+    <button type="button" class="setAlarm" onclick="showAlarmWindow()">Set Alarm</button>
+    <div class="alarm_window">
+      <!-- the close button is used to close the alarm window -->
+      <div id="closeButton" onclick="closeAlarmWindow()">X</div>
+      <div id="addAlarmForm">
+        <div>
+          <span class="time_text">Hours:</span><input id="hour_value" type="number" value="">
+        </div>
+        <div>
+          <span class="time_text">Minutes:</span><input id="mins_value" type="number" value="">
+        </div>
+        <div>
+          <span class="time_text"><input type="radio" name="session" value="AM">AM</span>
+          <span class="time_text"><input type="radio" name="session" value="PM">PM</span>
+        </div>
+        <div>
+          <button id="saveButton" type="button" class="save_button" onclick="saveAlarm()">Save</button>
+        </div>
+      </div>
+    </div>
+    <!-- the alarm list is used to show all the alarms -->
+    <ul id="alarm_list">
+
+    </ul>
+    <script type="text/javascript" src="./js/showTime.js"></script>
+    <script type="text/javascript" src="./js/showCloseAlarmWindow.js"></script>
+    <script type="text/javascript" src="./js/addRemoveAlarm.js"></script>
+  </body>
+</html>
