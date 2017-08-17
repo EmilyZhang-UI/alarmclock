@@ -16,8 +16,13 @@ function saveAlarm() {
   alarmList.push(alarm);
   createAlarm(alarm.hour,alarm.minutes,alarm.session);
   closeAlarmWindow();
-  hour = " ";
-  minutes = " ";
+  //clear all the input value after submit
+  document.getElementById("hour_value").value = "";
+  document.getElementById("mins_value").value = "";
+  var radionbuttons = document.getElementsByName("session");
+  radionbuttons.forEach(function(element,index){
+    radionbuttons[index].checked = false;
+  })
 }
 var index = 0;
 //create alarm according to the given hour, minutes and session
@@ -46,15 +51,18 @@ setInterval(function(){
         element.hour += 12;
       }
     }
+    //get the selected element by id
+    var e = document.getElementById(index);
     //if the alarm's hour and minutes are equal to the current time
     if(element.hour == (new Date().getHours()) && element.minutes == (new Date().getMinutes()) && (new Date().getSeconds() == "00")){
-      var e = document.getElementById(index);
       //the alarm will shake by setting up the animation
       e.style.animationName = "shake";
       e.style.animationDuration = "0.82s";
       e.style.animationIterationCount = "3";
       //line through this alarm
       e.classList.add("gone");
+    }else{
+      e.style.animationName = "";
     }
   });
 },1000);
