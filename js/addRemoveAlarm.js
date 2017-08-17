@@ -42,6 +42,7 @@ setInterval(function(){
   alarmList.forEach(function(element,index){
     if(element.session == 'PM'){
       if(element.hour < 12){
+        element.hour = Number.parseInt(element.hour)
         element.hour += 12;
       }
     }
