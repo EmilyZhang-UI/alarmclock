@@ -21,21 +21,21 @@
     <div class="alarm_window">
       <!-- the close button is used to close the alarm window -->
       <div id="closeButton" onclick="closeAlarmWindow()">X</div>
-      <div id="addAlarmForm">
-        <div>
-          <span class="time_text">Hours:</span><input id="hour_value" type="number" value="">
-        </div>
-        <div>
-          <span class="time_text">Minutes:</span><input id="mins_value" type="number" value="">
-        </div>
-        <div>
-          <span class="time_text"><input type="radio" name="session" value="AM">AM</span>
-          <span class="time_text"><input type="radio" name="session" value="PM">PM</span>
-        </div>
-        <div>
-          <button id="saveButton" type="button" class="save_button" onclick="saveAlarm()">Save</button>
-        </div>
-      </div>
+      <form id="addAlarmForm" action="">
+          <div>
+            <span class="time_text">Hours:</span><input id="hour_value" min="0" max="11" step="1" type="number" oninput="if(value.length>2)value=value.slice(0,2)" value="">
+          </div>
+          <div>
+            <span class="time_text">Minutes:</span><input id="mins_value" min="0" max="59" step="1" type="number" oninput="if(value.length>2)value=value.slice(0,2)" value="">
+          </div>
+          <div>
+            <span class="time_text"><input type="radio" name="session" value="AM">AM</span>
+            <span class="time_text"><input type="radio" name="session" value="PM">PM</span>
+          </div>
+          <div>
+            <button id="saveButton" type="button" class="save_button" onclick="saveAlarm()">Save</button>
+          </div>
+      </form>
     </div>
     <!-- the alarm list is used to show all the alarms -->
     <ul id="alarm_list">
